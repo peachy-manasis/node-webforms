@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<title>Loan Application</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="rest.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<h1>Loan App</h1>
+	<form>
+		<div id="type_of_loan_container">
+			<label>Type of loan to start your Quote</label>
+			<select name="type_of_loan">
+				<option value="fix_and_flip">Fix and Flip</option>
+				<option value="rental_properties">Rental Properties</option>
+				<option value="non_rehab_bridge_loan">Non-Rehab Bridge Loan</option>
+				<option value="owner_occupied_business">Owner Occupied - Business</option>
+				<option value="purpose">Purpose</option>
+				<option value="maturing_note">Maturing Note</option>
+				<option value="unfinished_construction">Unfinished Construction</option>
+				<option value="ground_up_construction">Ground up Construction</option>
+			</select>
+		</div>
+		<br/>
+		<br/>
+		<div id="property_container">
+			<label>Type of Property are you financing</label>
+			<select name="type_of_property">
+				<option value="sfr">SFR</option>
+				<option value="condo">Condo</option>
+				<option value="townhome">Townhome</option>
+				<option value="pud">PUD</option>
+				<option value="commercial">Commercial</option>
+				<option value="mixed_use">Mixed Use</option>
+				<option value="industrial">Industrial</option>
+				<option value="2_4_units">2-4 Units</option>
+				<option value="5_plus_units">5+ Units</option>
+			</select>
+			<br/>
+			<label>Is this a purchase or Refinance</label>
+			<select name="purchase_or_refinance">
+				<option value="purchase">Purchase</option>
+				<option value="refinance">Refinance</option>
+				<option value="refinance_co">Refinance C/O</option>
+			</select>
+			<br/>
+			<label>Will you live in the property</label>
+			<select name="live_in_property">
+				<option value="primary_residence">Primary Residence</option>
+				<option value="second_home">Second Home</option>
+				<option value="investment_property">Investment Property</option>
+			</select>
+			<br>
+			<label>What is the Property Address</label>
+			<textarea name="property_address"></textarea>
+		</div>
+		<br/>
+		<br/>
+		<div id="application_details_container">
+			<label>What is the purchase price?</label>
+			<input name="purchase_price" type="number" min="1" step="any">
+			<br/>
+			<label>What is your rehab budget?</label>
+			<input name="rehab_budget" type="number" min="1" step="any">
+			<br/>
+			<label>How many Sq Ft are you adding on?</label>
+			<input name="additional_sq_ft" type="number" min="1" step="any">
+			<br/>
+			<label>What is the AS-Is Value Today?</label>
+			<input name="as_is_value" type="number" min="1" step="any">
+			<br/>
+			<label>What's the Expected After Repair Value?</label>
+			<input name="expected_arv" type="number" min="1" step="any">
+			<br/>
+			<label>What is the loan amount you are requesting?</label>
+			<input name="requesting_loan_amount" type="number" min="1" step="any">
+			<br/>
+			<input name="transaction_type" type="hidden" value="residential">
+			<input name="use_of_funds" type="hidden" value="business">
+			<input name="property_rights" type="hidden" value="fee_simple">
+			<input name="suburban_or_rural" type="hidden" value="suburban">
+			<input name="occupancy_at_closing" type="hidden" value="occupied">
+			<input name="exit_strategy_time" type="hidden" value="3_months">
+			<input name="exit_strategy" type="hidden" value="selling_refinancing_other">
+			<input name="explanation_other_exit_strategy" type="hidden" value="business">
+			<input name="coe_date" type="hidden" value="01/01/2017">
+		</div>
+		<br/>
+		<br/>
+		<div id="mortgage_info_container">
+			<label>Are there outstanding mortgages on the property?</label>
+			<input name="1st_td_amount" type="number" min="1" step="any">
+			<br/>
+			<label>Total Expected Monthly Rent</label>
+			<input name="total_expected_monthly_rent" type="number" min="1" step="any">
+		</div>
+		<br/>
+		<br/>
+		<div id="investment_profile_container">
+			<label>How many investment properties have you owned?</label>
+			<input name="no_investment_props" type="number">
+			<br/>
+			<label>How is your Credit?</label>
+			<select name="credit_status">
+				<option value="excellent">Excellent</option>
+				<option vlaue="good">Good</option>
+				<option value="ok">OK</option>
+				<option value="poor">Poor</option>
+			</select>
+			<br/>
+			<label>How many active flips do you have so far this year?</label>
+			<input name="active_flips_this_year" type="number">
+			<br/>
+			<label>How many flips have you closed so far this year?</label>
+			<input name="closed_flips_this_year" type="number">
+			<br/>
+			<label>how many flips have you closed in the last year?</label>
+			<input type="number" name="closed_flips_last_year">
+			<br/>
+			<label>How many flips have you closed lifetime?</label>
+			<input type="number" name="closed_flips_lifetime">
+			<br/>
+			<label>Are you a first time home buyer</label>
+			<select name="first_time_buyer">
+				<option value=""> </option>
+				<option value="yes">Yes</option>
+				<option value="no">No</option>
+			</select>
+			<br/>
+			<label>Do you own or rent a home today?</label>
+			<select name="own_or_rent_home">
+				<option value=""> </option>
+				<option value="yes">Yes</option>
+				<option value="no">No</option>
+			</select>
+			<br/>
+			<label>Are you a US citizen?</label>
+			<select name="us_citizen">
+				<option value=""> </option>
+				<option value="yes">Yes</option>
+				<option value="no">No</option>
+			</select>
+		</div>
+		<br/>
+		<br/>
+		<div id="personal_info_container">
+			<label>First Name</label>
+			<input type="text" name="first_name">
+			<br/>
+			<label>Last Name</label>
+			<input type="text" name="last_name">
+			<br/>
+			<label>Password</label>
+			<input type="password" name="password">
+			<br/>
+			<label>Please enter your email</label>
+			<input type="email" name="email">
+			<br/>
+			<label>Phone Number</label>
+			<input type="text" name="phone_number">
+		</div>
+	</form>
+</body>
+
+</html>
